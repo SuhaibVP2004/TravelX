@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home | TravelX</title>
+<meta name="description" content="TravelX – handcrafted travel packages and destinations worldwide.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+<section class="hero" id="home" style="--img:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=75')">
+ <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-hidden="true" tabindex="-1" poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=75">
+  <source src="assets/video/home.mp4" type="video/mp4">
+ </video>
+ <div class="container"><h1 class="hero-title"><span class="line">Journey to</span><span class="line">explore world</span></h1>
+ <p>Discover amazing destinations, explore breathtaking landscapes, and experience unforgettable adventures. Let us help you create beautiful memories with every journey.</p>
+ <a class="btn lg" href="#enquiry">Learn More</a><a class="btn lg ghost" href="packages.html">Book Now</a></div>
+</section>
+<section class="enquiry" id="enquiry"><div class="container">
+ <form class="enq-form reveal" id="inquiry-form" novalidate>
+  <div><label for="dest">Search Destination <span class="req">*</span></label><input id="dest" name="dest" type="text" placeholder="e.g. Bali, Paris"></div>
+  <div><label for="pax">Pax Number <span class="req">*</span></label><input id="pax" name="pax" type="number" min="1" max="50" placeholder="No. of travellers"></div>
+  <div><label for="checkin">Check-in Date <span class="req">*</span></label><input id="checkin" name="checkin" type="date"></div>
+  <div><label for="checkout">Check-out Date <span class="req">*</span></label><input id="checkout" name="checkout" type="date"></div>
+  <button class="btn pri" type="submit">Inquire Now</button>
+  <p class="enq-msg" role="alert"></p>
+ </form>
+ <div class="title"><span>Our services</span><h2>We have the best services available for you!</h2></div>
+ <div class="grid services">
+  <article class="card reveal"><div class="img"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=700&q=70" alt="Flight Services" loading="lazy"></div><div class="body"><h3><i class="fa-solid fa-plane-departure"></i> Flight Services</h3><p>Arrival and Departure</p></div></article>
+  <article class="card reveal"><div class="img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=70" alt="Food Services" loading="lazy"></div><div class="body"><h3><i class="fa-solid fa-utensils"></i> Food Services</h3><p>Catering</p></div></article>
+  <article class="card reveal"><div class="img"><img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=700&q=70" alt="Travel Services" loading="lazy"></div><div class="body"><h3><i class="fa-solid fa-van-shuttle"></i> Travel Services</h3><p>Pick-up/drop</p></div></article>
+  <article class="card reveal"><div class="img"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=70" alt="Hotel Services" loading="lazy"></div><div class="body"><h3><i class="fa-solid fa-hotel"></i> Hotel Services</h3><p>Check-in/out</p></div></article>
+ </div></div></section>
+<section class="section" id="popular"><div class="container">
+ <div class="title"><span>Popular destinations</span><h2>Places travellers love</h2><p>Discover extraordinary places, experience unique cultures and make every journey unforgettable.</p></div>
+ <div class="loc-grid" id="home-dest"></div>
+ <div class="center"><a class="btn pri" href="destinations.html?all=1">See All Destinations</a></div></div></section>
+<section class="section alt pk-sec" id="featured"><div class="container">
+ <div class="title"><span>Popular Packages</span><h2>Checkout Our Packages</h2><p>More than just a journey unforgettable experiences, seamless stays and exciting adventures, all in one perfect getaway.</p></div>
+ <div class="pk-grid" id="home-pkg"></div>
+ <div class="center"><button class="btn pri" id="home-pk-all" type="button" aria-expanded="false" aria-controls="home-pk-more">View All Packages</button></div></div></section>
+<section class="section hide" id="home-pk-more"><div class="container">
+ <div class="pk-grid" id="home-pk-rest"></div></div></section>
+<section class="section" id="home-gallery"><div class="container">
+ <div class="title"><span>Photo Gallery</span><h2>Photo's From Travellers</h2><p>Explore the world through the eyes of fellow travellers. Discover beautiful destinations, unforgettable moments and inspiring adventures captured along the way.
+</p></div>
+ <div class="gal5" id="home-gal"></div></div></section>
+<section class="section alt" id="contact"><div class="container">
+ <div class="title"><span>Get in touch</span><h2>Contact Us</h2><p>Questions about a package or a custom trip? Send us a message and we will reply within 24 hours.</p></div>
+ <div class="cgrid">
+  <aside class="cta" style="--img:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=70')">
+   <span class="eyebrow">Call To Action</span>
+   <h2>Ready For Unforgettable Travel. Remember Us!</h2>
+   <p>Your dream destination is just a journey away. Discover exciting places, experience new cultures   and create memories that last a lifetime. Let us make your next adventure extraordinary!
+</p>
+   <a class="btn" href="#featured">Explore Packages</a>
+  </aside>
+  <form id="contact-form" novalidate>
+   <div class="fld"><input name="name" type="text" placeholder="Full name" aria-label="Full name"><span class="err"></span></div>
+   <div class="fld"><input name="email" type="email" placeholder="Email address" aria-label="Email address"><span class="err"></span></div>
+   <div class="fld"><input name="phone" type="tel" placeholder="Phone number" aria-label="Phone number"><span class="err"></span></div>
+   <div class="fld"><input name="subject" type="text" placeholder="Subject" aria-label="Subject"><span class="err"></span></div>
+   <div class="fld wide"><textarea name="message" rows="3" placeholder="Your message" aria-label="Your message"></textarea><span class="err"></span></div>
+   <button class="btn pri" type="submit">Send Message</button>
+   <p class="ok" role="status"></p>
+  </form>
+ </div></div></section>
+</main>
+<div class="modal" id="inq-modal" role="dialog" aria-modal="true" aria-labelledby="inq-title">
+ <div class="modal-box">
+  <div class="modal-ic"><i class="fa-solid fa-check"></i></div>
+  <h2 id="inq-title">Your Travel Inquiry Has Been Submitted!</h2>
+  <p>Thank you for choosing TravelX. Our travel consultant will contact you shortly with the best available packages.</p>
+  <ul class="modal-sum">
+   <li><span>Destination</span><b id="m-dest"></b></li>
+   <li><span>Travellers</span><b id="m-pax"></b></li>
+   <li><span>Check-in</span><b id="m-in"></b></li>
+   <li><span>Check-out</span><b id="m-out"></b></li>
+  </ul>
+  <button class="btn pri" id="inq-back" type="button">Back to Home</button>
+ </div>
+</div>
+<div id="site-footer"></div>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
