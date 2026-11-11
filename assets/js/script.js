@@ -46,6 +46,7 @@
     ['Rahul Menon', 'Founder & CEO', '1507003211169-0a1dd7228f2d'], ['Sara Thomas', 'Head of Operations', '1494790108377-be9c29b29330'],
     ['Daniel Brooks', 'Lead Travel Designer', '1500648767791-00dcc994a43e'], ['Meera Iyer', 'Customer Experience', '1438761681033-6461ffad8d80']
   ];
+
   const LOC = [
     // [name, Unsplash photo id, slug, country/subtitle]. First 8 = "Popular destinations" on the home page; the rest appear after "See All Destinations"
     ['India', '1564507592333-c60657eea523', 'india'], ['Turkey', '1570939274717-7eda259b50ed', 'turkey'],
@@ -256,8 +257,21 @@
 
   /* ---------- Nav, scroll header, back-to-top ---------- */
   const header = $('.header'), burger = $('.burger'), menu = $('#menu'), top = $('.top');
-  burger.onclick = () => { const o = menu.classList.toggle('open'); burger.setAttribute('aria-expanded', o); };
-  $$('#menu a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  // Pages that open with a big photo (Home, About, Contact, Gallery, destination details) get a see-through
+  // navbar at the top that turns solid on scroll. Pages that open with plain content keep a solid navbar.
+  if ($('main > .hero') || $('main > .banner') || page === 'location.html') document.body.classList.add('nav-over');
+  // Dim layer behind the open mobile menu: tapping it (or anywhere outside the menu) closes the menu
+  const backdrop = document.createElement('div');
+  backdrop.className = 'menu-backdrop';
+  document.body.append(backdrop);
+  const setMenu = o => { menu.classList.toggle('open', o); backdrop.classList.toggle('show', o); burger.setAttribute('aria-expanded', o); };
+  burger.onclick = e => { e.stopPropagation(); setMenu(!menu.classList.contains('open')); };
+  $$('#menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  // click or tap outside the menu closes it
+  document.addEventListener('click', e => { if (menu.classList.contains('open') && !menu.contains(e.target) && !burger.contains(e.target)) setMenu(false); });
+  // Escape closes it too, and so does growing the window to the desktop layout
+  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  addEventListener('resize', () => { if (innerWidth > 860) setMenu(false); });
   const onScroll = () => { header.classList.toggle('solid', scrollY > 60); top.classList.toggle('show', scrollY > 500); };
   addEventListener('scroll', onScroll); onScroll();
   top.onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
